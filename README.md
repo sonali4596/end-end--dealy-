@@ -1,39 +1,36 @@
-# end-end--deal
+#END-TO-END-DELAY
 SYNOPSIS:
 end-end--delay.py is a python program to compute end-to-end transmission in a network connecting Host
 A to Host B to Host C via two routers R1,R2 using store and forward switching.
 
-HOW TO EXECUTE THE PROGRAM WITH ONE EXAMPLE:
-Program execution:
+#HOW TO EXECUTE THE PROGRAM 
 Program execution:
 
 To execute the program, specify ./asn1.py and then give input as command line parameters.
 
 The program is to be invoked as
 
-  python End-EndDelay2links.py --t1 <value in Mbps> --t2 <value in Mbps> --d1 <value in KM> --d2 <value in KM> -N <value> -M <value in Mbits> -S <speed in 10^8m/s> -p <processing time in milliseconds>
+  python End-End-Delaylinks.py --t1 <value in Mbps> --t2 <value in Mbps> --d1 <value in KM> --d2 <value in KM> -N <value> -M <value in Mbits> -S <speed in 10^8m/s>
 Example:
 
 Input:
-
-    python End-EndDelay2links.py --t1 10 --t2 12 --d1 2 --d2 1 -N 5 -M 19 -S 2 -p 1
+C:\Users\sonali\Desktop>python end-to-end-delay.py --t1 10 --t2 20 --t3 10  --d1 5 --d2 6 --d3 7 -N 10 -M 20 -S 2 
+   
 Output:
-
-	    Packet          A                            R                           B 
-		P1          0.000 ms                  1900.010 ms                  3484.348 ms
-		P2       1900.000 ms                  3800.010 ms                  5384.348 ms
-		P3       3800.000 ms                  5700.010 ms                  7284.348 ms
-		P4       5700.000 ms                  7600.010 ms                  9184.348 ms
-		P5       7600.000 ms                  9500.010 ms                 11084.348 ms
-
-	End to End transmission delay = 11084.348 ms
-####DESCRIPTION OF HOW THE PROGRAM WORKS:
-In this program we are calculating and displaying three things:
-Time at which packet leaves host A
-Time at which packet reaches router R
-Time at which packet reaches host B
-Time at host A for packets is initially taken as 0 for packet 1, and then it is incremented by transmission delay of link1 for each packet.
-For each packet, transmission and propagation delay of link1 is added to reach router R. Similarly transmission and propagation delay of link2 is added to reach host B.
-If the time taken to reach router R from host A is less than the transmission delay of link2, only then queuing delay is calculated and added. Queuing delay is calculated by 
-adding the difference of transmission delay of link2 and transmission delay of link1 to the time calculated to reach host B.
-In this program we are assuming that router has infinite buffer so there won't be any packet loss. We are not handelling traffic congestion on link in our program. We are not handling traffic congestion on link in our program.
+ Packet      |   A   |--------------------(   R   )--------------------(   R   )--------------------|   B  |
+ P1             0.000                       2000.025                     3000.055                     5000.090 
+ P2             2000.000                    4000.025                     5000.055                     7000.090
+ P3             4000.000                    6000.025                     7000.055                     9000.090
+ P4             6000.000                    8000.025                     9000.055                     11000.090
+ P5             8000.000                    10000.025                    11000.055                    13000.090	
+ P6             10000.000                   12000.025                    13000.055                    15000.090
+ P7             12000.000                   14000.025                    15000.055                    17000.090
+ P8             14000.000                   16000.025                    17000.055                    19000.090
+ P9             16000.000                   18000.025                    19000.055                    21000.090
+ P10            18000.000                   20000.025                    21000.055                    23000.090
+ total delay: 140000.9
+ 
+ problems overcome 
+ 1)to write this program taking input before the running of the program I had to learn parsing of the command line arguments(tutorials point )
+ 2) this program is written as we calculate the delay theoretically.
+ 
