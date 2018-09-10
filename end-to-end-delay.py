@@ -69,6 +69,3 @@ def printHelp():
 			-N: Number of Packets <value>\n\t  -M: Packet Size <value in Mbits>\n\
 			-S: Propagation Speed <speed in 10^8m/s>\n\t  -p: Router Processing Time <processing time in milliseconds>")
 	sys.exit()
-
-if __name__ =='__main__':
-	main()
