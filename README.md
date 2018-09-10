@@ -1,7 +1,7 @@
 #END-TO-END-DELAY
 SYNOPSIS:
-end-end--delay.py is a python program to compute end-to-end transmission in a network connecting Host
-A to Host B to Host C via two routers R1,R2 using store and forward switching.
+end-to-end-delay1.py is a python program to compute end-to-end transmission in a network connecting Host
+A to Host B via two routers R1,R2 using store and forward switching.
 
 #HOW TO EXECUTE THE PROGRAM 
 Program execution:
