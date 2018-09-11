@@ -17,8 +17,8 @@ def main():  		# MAIN FUNCTION STARTS HERE
 			sys.exit(2)
 
 	for opt,arg in opts:		# taking argumnts  one by one from opts and assigning it to  respective options  using nested if-else
-		print(opt)
-		print(arg)
+		
+		
 		if opt == '--t1':
 			t1 = float(arg)
 		elif opt == '--t2':
@@ -106,3 +106,5 @@ def packet1(t1,d1,M):
 def packet10(t2,d2,M):
 	p2 = transDelay(t2,M) + propDelay(d2)		#calculating  the delay  at router two  which is denoted as "R2"
 	return p2
+if __name__ =='__main__':
+        main()
