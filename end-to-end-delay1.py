@@ -62,11 +62,14 @@ def main():  		# MAIN FUNCTION STARTS HERE
 	print ("-----------------------------------------------------------------------------------------------------------------")
 		
 def printHelp():
-	print ("We have multiple options:\n\t--t1: Transmission Delay at Link1 <value in Mbps>\n\
-			--t2: Transmission Delay at Link2 <value in Mbps>\n\t--t3: Transmission Delay at Link3 <value in Mbps>\n\
-			--d1: Distance of Link1<value in KM>\n\t--d2: Distance of Link2 <value in KM>\n\t--d3: Distance of Link3 <value in KM>\n\
-			-N: Number of Packets <value>\n\t  -M: Packet Size <value in kbits>\n\
-			 -p: Router Processing Time <processing time in milliseconds>")
+	print ("We have multiple options:\n\t 1:--t1: Transmission Delay at Link1 <value in Mbps>\n\
+			2:--t2: Transmission Delay at Link2 <value in Mbps>\n\t
+			3:--t3: Transmission Delay at Link3 <value in Mbps>\n\
+			4:--d1: Distance of Link1<value in KM>\n\t
+			5:--d2: Distance of Link2 <value in KM>\n\t
+			6:--d3: Distance of Link3 <value in KM>\n\
+			7:-N: Number of Packets <value>\n\t 
+	       		8:-M: Packet Size <value in kbits>)
 	sys.exit()
 def queue1(t1,M,d1,n):#calculating queing delay for router one assuming that no packet is in the queue when other is processing 
 	pkt=list()
